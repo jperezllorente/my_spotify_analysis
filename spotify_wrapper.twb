@@ -1,0 +1,643 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20222.22.0916.1526                               -->
+<workbook original-version='18.1' source-build='2022.2.2 (20222.22.0916.1526)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='artists' inline='true' name='federated.0wiif921222bvu1gt5m0a1i6keej' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='artists' name='textscan.0r5bjng1qm3tb61a4skau0s679uv'>
+            <connection class='textscan' directory='C:/Users/juanp/proyectos_varios/my_spotify_analysis/data' filename='artists.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.0r5bjng1qm3tb61a4skau0s679uv' name='artists.csv' table='[artists#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='es_ES' separator=','>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='string' name='artist' ordinal='1' />
+            <column datatype='string' name='artist_id' ordinal='2' />
+            <column datatype='string' name='genres' ordinal='3' />
+            <column datatype='string' name='track_id' ordinal='4' />
+            <column datatype='integer' name='popularity' ordinal='5' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.0r5bjng1qm3tb61a4skau0s679uv' name='artists.csv' table='[artists#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='es_ES' separator=','>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='string' name='artist' ordinal='1' />
+            <column datatype='string' name='artist_id' ordinal='2' />
+            <column datatype='string' name='genres' ordinal='3' />
+            <column datatype='string' name='track_id' ordinal='4' />
+            <column datatype='integer' name='popularity' ordinal='5' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[artists.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;es&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;€&quot;</attribute>
+              <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;es_ES&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='thousands-char'>&quot;.&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[artists.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[artists.csv_AFEA35361FC34A51A116900C7632C788]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>artist</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[artist]</local-name>
+            <parent-name>[artists.csv]</parent-name>
+            <remote-alias>artist</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[artists.csv_AFEA35361FC34A51A116900C7632C788]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>artist_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[artist_id]</local-name>
+            <parent-name>[artists.csv]</parent-name>
+            <remote-alias>artist_id</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[artists.csv_AFEA35361FC34A51A116900C7632C788]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>genres</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[genres]</local-name>
+            <parent-name>[artists.csv]</parent-name>
+            <remote-alias>genres</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[artists.csv_AFEA35361FC34A51A116900C7632C788]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>track_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[track_id]</local-name>
+            <parent-name>[artists.csv]</parent-name>
+            <remote-alias>track_id</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[artists.csv_AFEA35361FC34A51A116900C7632C788]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>popularity</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[popularity]</local-name>
+            <parent-name>[artists.csv]</parent-name>
+            <remote-alias>popularity</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[artists.csv_AFEA35361FC34A51A116900C7632C788]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <_.fcp.ObjectModelTableType.true...column caption='artists.csv' datatype='table' name='[__tableau_internal_object_id__].[artists.csv_AFEA35361FC34A51A116900C7632C788]' role='measure' type='quantitative' />
+      <column caption='Artist' datatype='string' name='[artist]' role='dimension' type='nominal' />
+      <column caption='Artist Id' datatype='string' name='[artist_id]' role='dimension' type='nominal' />
+      <column caption='Genres' datatype='string' name='[genres]' role='dimension' type='nominal' />
+      <column caption='Popularity' datatype='integer' name='[popularity]' role='measure' type='quantitative' />
+      <column caption='Track Id' datatype='string' name='[track_id]' role='dimension' type='nominal' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;España&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='artists.csv' id='artists.csv_AFEA35361FC34A51A116900C7632C788'>
+            <properties context=''>
+              <relation connection='textscan.0r5bjng1qm3tb61a4skau0s679uv' name='artists.csv' table='[artists#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='es_ES' separator=','>
+                  <column datatype='integer' name='F1' ordinal='0' />
+                  <column datatype='string' name='artist' ordinal='1' />
+                  <column datatype='string' name='artist_id' ordinal='2' />
+                  <column datatype='string' name='genres' ordinal='3' />
+                  <column datatype='string' name='track_id' ordinal='4' />
+                  <column datatype='integer' name='popularity' ordinal='5' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+    <datasource caption='tracks' inline='true' name='federated.09pb267060zqz610xeotg17qc3x2' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='tracks' name='textscan.1xzw6f91r1ingy13s2viz1u40dfz'>
+            <connection class='textscan' directory='C:/Users/juanp/proyectos_varios/my_spotify_analysis/data' filename='tracks.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1xzw6f91r1ingy13s2viz1u40dfz' name='tracks.csv' table='[tracks#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='es_ES'>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='string' name='track' ordinal='1' />
+            <column datatype='string' name='id' ordinal='2' />
+            <column datatype='string' name='playlist_id' ordinal='3' />
+            <column datatype='string' name='danceability' ordinal='4' />
+            <column datatype='string' name='energy' ordinal='5' />
+            <column datatype='string' name='key' ordinal='6' />
+            <column datatype='string' name='loudness' ordinal='7' />
+            <column datatype='string' name='mode' ordinal='8' />
+            <column datatype='string' name='speechiness' ordinal='9' />
+            <column datatype='string' name='acousticness' ordinal='10' />
+            <column datatype='string' name='instrumentalness' ordinal='11' />
+            <column datatype='string' name='liveness' ordinal='12' />
+            <column datatype='string' name='valence' ordinal='13' />
+            <column datatype='string' name='tempo' ordinal='14' />
+            <column datatype='string' name='duration_ms' ordinal='15' />
+            <column datatype='string' name='playlist' ordinal='16' />
+            <column datatype='boolean' name='top-track' ordinal='17' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.1xzw6f91r1ingy13s2viz1u40dfz' name='tracks.csv' table='[tracks#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='es_ES'>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='string' name='track' ordinal='1' />
+            <column datatype='string' name='id' ordinal='2' />
+            <column datatype='string' name='playlist_id' ordinal='3' />
+            <column datatype='string' name='danceability' ordinal='4' />
+            <column datatype='string' name='energy' ordinal='5' />
+            <column datatype='string' name='key' ordinal='6' />
+            <column datatype='string' name='loudness' ordinal='7' />
+            <column datatype='string' name='mode' ordinal='8' />
+            <column datatype='string' name='speechiness' ordinal='9' />
+            <column datatype='string' name='acousticness' ordinal='10' />
+            <column datatype='string' name='instrumentalness' ordinal='11' />
+            <column datatype='string' name='liveness' ordinal='12' />
+            <column datatype='string' name='valence' ordinal='13' />
+            <column datatype='string' name='tempo' ordinal='14' />
+            <column datatype='string' name='duration_ms' ordinal='15' />
+            <column datatype='string' name='playlist' ordinal='16' />
+            <column datatype='boolean' name='top-track' ordinal='17' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[tracks.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;es&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;€&quot;</attribute>
+              <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;es_ES&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='thousands-char'>&quot;.&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[tracks.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks.csv_F4611096CCBF4D308995E57422A760B6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>track</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[track]</local-name>
+            <parent-name>[tracks.csv]</parent-name>
+            <remote-alias>track</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks.csv_F4611096CCBF4D308995E57422A760B6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[id]</local-name>
+            <parent-name>[tracks.csv]</parent-name>
+            <remote-alias>id</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks.csv_F4611096CCBF4D308995E57422A760B6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>playlist_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[playlist_id]</local-name>
+            <parent-name>[tracks.csv]</parent-name>
+            <remote-alias>playlist_id</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks.csv_F4611096CCBF4D308995E57422A760B6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>danceability</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[danceability]</local-name>
+            <parent-name>[tracks.csv]</parent-name>
+            <remote-alias>danceability</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks.csv_F4611096CCBF4D308995E57422A760B6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>energy</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[energy]</local-name>
+            <parent-name>[tracks.csv]</parent-name>
+            <remote-alias>energy</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks.csv_F4611096CCBF4D308995E57422A760B6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>key</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[key]</local-name>
+            <parent-name>[tracks.csv]</parent-name>
+            <remote-alias>key</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks.csv_F4611096CCBF4D308995E57422A760B6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>loudness</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[loudness]</local-name>
+            <parent-name>[tracks.csv]</parent-name>
+            <remote-alias>loudness</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks.csv_F4611096CCBF4D308995E57422A760B6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>mode</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[mode]</local-name>
+            <parent-name>[tracks.csv]</parent-name>
+            <remote-alias>mode</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks.csv_F4611096CCBF4D308995E57422A760B6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>speechiness</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[speechiness]</local-name>
+            <parent-name>[tracks.csv]</parent-name>
+            <remote-alias>speechiness</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks.csv_F4611096CCBF4D308995E57422A760B6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>acousticness</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[acousticness]</local-name>
+            <parent-name>[tracks.csv]</parent-name>
+            <remote-alias>acousticness</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks.csv_F4611096CCBF4D308995E57422A760B6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>instrumentalness</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[instrumentalness]</local-name>
+            <parent-name>[tracks.csv]</parent-name>
+            <remote-alias>instrumentalness</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks.csv_F4611096CCBF4D308995E57422A760B6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>liveness</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[liveness]</local-name>
+            <parent-name>[tracks.csv]</parent-name>
+            <remote-alias>liveness</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks.csv_F4611096CCBF4D308995E57422A760B6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>valence</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[valence]</local-name>
+            <parent-name>[tracks.csv]</parent-name>
+            <remote-alias>valence</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks.csv_F4611096CCBF4D308995E57422A760B6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tempo</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[tempo]</local-name>
+            <parent-name>[tracks.csv]</parent-name>
+            <remote-alias>tempo</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks.csv_F4611096CCBF4D308995E57422A760B6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>duration_ms</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[duration_ms]</local-name>
+            <parent-name>[tracks.csv]</parent-name>
+            <remote-alias>duration_ms</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks.csv_F4611096CCBF4D308995E57422A760B6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>playlist</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[playlist]</local-name>
+            <parent-name>[tracks.csv]</parent-name>
+            <remote-alias>playlist</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks.csv_F4611096CCBF4D308995E57422A760B6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>top-track</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[top-track]</local-name>
+            <parent-name>[tracks.csv]</parent-name>
+            <remote-alias>top-track</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks.csv_F4611096CCBF4D308995E57422A760B6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <_.fcp.ObjectModelTableType.true...column caption='tracks.csv' datatype='table' name='[__tableau_internal_object_id__].[tracks.csv_F4611096CCBF4D308995E57422A760B6]' role='measure' type='quantitative' />
+      <column caption='Acousticness' datatype='string' name='[acousticness]' role='dimension' type='nominal' />
+      <column caption='Danceability' datatype='string' name='[danceability]' role='dimension' type='nominal' />
+      <column caption='Duration Ms' datatype='string' name='[duration_ms]' role='dimension' type='nominal' />
+      <column caption='Energy' datatype='string' name='[energy]' role='dimension' type='nominal' />
+      <column caption='Id' datatype='string' name='[id]' role='dimension' type='nominal' />
+      <column caption='Instrumentalness' datatype='string' name='[instrumentalness]' role='dimension' type='nominal' />
+      <column caption='Key' datatype='string' name='[key]' role='dimension' type='nominal' />
+      <column caption='Liveness' datatype='string' name='[liveness]' role='dimension' type='nominal' />
+      <column caption='Loudness' datatype='string' name='[loudness]' role='dimension' type='nominal' />
+      <column caption='Mode' datatype='string' name='[mode]' role='dimension' type='nominal' />
+      <column caption='Playlist' datatype='string' name='[playlist]' role='dimension' type='nominal' />
+      <column caption='Playlist Id' datatype='string' name='[playlist_id]' role='dimension' type='nominal' />
+      <column caption='Speechiness' datatype='string' name='[speechiness]' role='dimension' type='nominal' />
+      <column caption='Tempo' datatype='string' name='[tempo]' role='dimension' type='nominal' />
+      <column caption='Top-Track' datatype='boolean' name='[top-track]' role='dimension' type='nominal' />
+      <column caption='Track' datatype='string' name='[track]' role='dimension' type='nominal' />
+      <column caption='Valence' datatype='string' name='[valence]' role='dimension' type='nominal' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;España&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='tracks.csv' id='tracks.csv_F4611096CCBF4D308995E57422A760B6'>
+            <properties context=''>
+              <relation connection='textscan.1xzw6f91r1ingy13s2viz1u40dfz' name='tracks.csv' table='[tracks#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='es_ES'>
+                  <column datatype='integer' name='F1' ordinal='0' />
+                  <column datatype='string' name='track' ordinal='1' />
+                  <column datatype='string' name='id' ordinal='2' />
+                  <column datatype='string' name='playlist_id' ordinal='3' />
+                  <column datatype='string' name='danceability' ordinal='4' />
+                  <column datatype='string' name='energy' ordinal='5' />
+                  <column datatype='string' name='key' ordinal='6' />
+                  <column datatype='string' name='loudness' ordinal='7' />
+                  <column datatype='string' name='mode' ordinal='8' />
+                  <column datatype='string' name='speechiness' ordinal='9' />
+                  <column datatype='string' name='acousticness' ordinal='10' />
+                  <column datatype='string' name='instrumentalness' ordinal='11' />
+                  <column datatype='string' name='liveness' ordinal='12' />
+                  <column datatype='string' name='valence' ordinal='13' />
+                  <column datatype='string' name='tempo' ordinal='14' />
+                  <column datatype='string' name='duration_ms' ordinal='15' />
+                  <column datatype='string' name='playlist' ordinal='16' />
+                  <column datatype='boolean' name='top-track' ordinal='17' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Hoja 1'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{DB0D3A15-DA9B-4369-A5F2-611907BA03CF}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' maximized='true' name='Hoja 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='128'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='24'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{CA2FCBC0-AFD0-41C1-AE64-C9889C56CE16}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Hoja 1' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABJ0AAASdAHeZh94
+      AAACFUlEQVR4nO3TMQEAIAzAMMC/5yFjRxMFfXpnZg5Eve0A2GQA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQD
+      kGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBp
+      BiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA
+      0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDN
+      AKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxA
+      mgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKR9Y+0F
+      fBUOM1sAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
