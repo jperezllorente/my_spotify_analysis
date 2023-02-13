@@ -522,6 +522,11 @@
         </metadata-records>
       </connection>
       <aliases enabled='yes' />
+      <column caption='angle' datatype='real' name='[Calculation_127789702423785473]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='RUNNING_SUM(&#13;&#10;2*pi()/9) + PI()/2'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
       <_.fcp.ObjectModelTableType.true...column caption='tracks.csv' datatype='table' name='[__tableau_internal_object_id__].[tracks.csv_F4611096CCBF4D308995E57422A760B6]' role='measure' type='quantitative' />
       <column caption='Acousticness' datatype='string' name='[acousticness]' role='dimension' type='nominal' />
       <column caption='Danceability' datatype='string' name='[danceability]' role='dimension' type='nominal' />
@@ -576,12 +581,297 @@
         </objects>
       </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
     </datasource>
+    <datasource caption='tracks_unpivot' inline='true' name='federated.0baq8r00koejlp139sesq1kt9vnv' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='tracks_unpivot' name='textscan.0syosij0yl0ez21fx2hvx0de4395'>
+            <connection class='textclean' cleaning='yes' compat='no' csvFile='C:/Users/juanp/proyectos_varios/my_spotify_analysis/data/tracks_unpivot.csv' dataRefreshTime='' directory='C:/Users/juanp/proyectos_varios/my_spotify_analysis/data' filename='C:/Users/juanp/AppData/Local/Temp/TableauTemp/0ad2haw0bi6wd012pa2h00ao25hn/tracks_unpivot.csv.xlsx' interpretationMode='8' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.0syosij0yl0ez21fx2hvx0de4395' name='tracks_unpivot.csv' table='[tracks_unpivot#csv$]' type='table'>
+          <columns character-set='UTF-8' gridOrigin='A1:H10001:no:A1:H10001:1' header='yes' locale='es_ES'>
+            <column datatype='string' name='track' ordinal='0' />
+            <column datatype='string' name='id' ordinal='1' />
+            <column datatype='string' name='playlist_id' ordinal='2' />
+            <column datatype='string' name='playlist' ordinal='3' />
+            <column datatype='boolean' name='top-track' ordinal='4' />
+            <column datatype='integer' name='duration_ms' ordinal='5' />
+            <column datatype='string' name='variable' ordinal='6' />
+            <column datatype='integer' name='value' ordinal='7' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.0syosij0yl0ez21fx2hvx0de4395' name='tracks_unpivot.csv' table='[tracks_unpivot#csv$]' type='table'>
+          <columns character-set='UTF-8' gridOrigin='A1:H10001:no:A1:H10001:1' header='yes' locale='es_ES'>
+            <column datatype='string' name='track' ordinal='0' />
+            <column datatype='string' name='id' ordinal='1' />
+            <column datatype='string' name='playlist_id' ordinal='2' />
+            <column datatype='string' name='playlist' ordinal='3' />
+            <column datatype='boolean' name='top-track' ordinal='4' />
+            <column datatype='integer' name='duration_ms' ordinal='5' />
+            <column datatype='string' name='variable' ordinal='6' />
+            <column datatype='integer' name='value' ordinal='7' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[tracks_unpivot.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:H10001:no:A1:H10001:1&quot;</attribute>
+              <attribute datatype='integer' name='lost'>0</attribute>
+              <attribute datatype='integer' name='outcome'>1</attribute>
+              <attribute datatype='integer' name='processed'>21648</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>track</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[track]</local-name>
+            <parent-name>[tracks_unpivot.csv]</parent-name>
+            <remote-alias>track</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LES_RES_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks_unpivot.csv_97C4F872945E4EDEB00C8B8FD71A7F53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[id]</local-name>
+            <parent-name>[tracks_unpivot.csv]</parent-name>
+            <remote-alias>id</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LES_RES_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks_unpivot.csv_97C4F872945E4EDEB00C8B8FD71A7F53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>playlist_id</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[playlist_id]</local-name>
+            <parent-name>[tracks_unpivot.csv]</parent-name>
+            <remote-alias>playlist_id</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LES_RES_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks_unpivot.csv_97C4F872945E4EDEB00C8B8FD71A7F53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>playlist</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[playlist]</local-name>
+            <parent-name>[tracks_unpivot.csv]</parent-name>
+            <remote-alias>playlist</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LES_RES_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks_unpivot.csv_97C4F872945E4EDEB00C8B8FD71A7F53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>top-track</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[top-track]</local-name>
+            <parent-name>[tracks_unpivot.csv]</parent-name>
+            <remote-alias>top-track</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WINBOOL&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks_unpivot.csv_97C4F872945E4EDEB00C8B8FD71A7F53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>duration_ms</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[duration_ms]</local-name>
+            <parent-name>[tracks_unpivot.csv]</parent-name>
+            <remote-alias>duration_ms</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks_unpivot.csv_97C4F872945E4EDEB00C8B8FD71A7F53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>variable</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[variable]</local-name>
+            <parent-name>[tracks_unpivot.csv]</parent-name>
+            <remote-alias>variable</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LES_RES_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks_unpivot.csv_97C4F872945E4EDEB00C8B8FD71A7F53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>value</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[value]</local-name>
+            <parent-name>[tracks_unpivot.csv]</parent-name>
+            <remote-alias>value</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks_unpivot.csv_97C4F872945E4EDEB00C8B8FD71A7F53]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='angle' datatype='real' name='[Calculation_127789702426378243]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='RUNNING_SUM(&#13;&#10;2*pi()/COUNTD([variable])) + PI()/2'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Distance From Center' datatype='real' name='[Calculation_127789702426853381]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([Calculation_127789702427570184])' />
+      </column>
+      <column caption='X' datatype='real' name='[Calculation_127789702426976262]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Calculation_127789702426853381]*COS([Calculation_127789702426378243])'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Y' datatype='real' name='[Calculation_127789702427041799]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Calculation_127789702426853381]*SIN([Calculation_127789702426378243])'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='audio_features' datatype='real' name='[Calculation_127789702427570184]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[value]/100' />
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='tracks_unpivot.csv' datatype='table' name='[__tableau_internal_object_id__].[tracks_unpivot.csv_97C4F872945E4EDEB00C8B8FD71A7F53]' role='measure' type='quantitative' />
+      <column caption='Duration Ms' datatype='integer' name='[duration_ms]' role='dimension' type='ordinal' />
+      <column caption='Id' datatype='string' name='[id]' role='dimension' type='nominal' />
+      <column caption='Playlist' datatype='string' name='[playlist]' role='dimension' type='nominal' />
+      <column caption='Playlist Id' datatype='string' name='[playlist_id]' role='dimension' type='nominal' />
+      <column caption='Top-Track' datatype='boolean' name='[top-track]' role='dimension' type='nominal' />
+      <column caption='Track' datatype='string' name='[track]' role='dimension' type='nominal' />
+      <column caption='Value' datatype='integer' name='[value]' role='dimension' type='ordinal' />
+      <column caption='Variable' datatype='string' name='[variable]' role='dimension' type='nominal' />
+      <column-instance column='[variable]' derivation='None' name='[none:variable:nk]' pivot='key' type='nominal' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:variable:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;speechiness&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;acousticness&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;key&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;tempo&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;liveness&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;danceability&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;loudness&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;valence&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;mode&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;energy&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;instrumentalness&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;España&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='tracks_unpivot.csv' id='tracks_unpivot.csv_97C4F872945E4EDEB00C8B8FD71A7F53'>
+            <properties context=''>
+              <relation connection='textscan.0syosij0yl0ez21fx2hvx0de4395' name='tracks_unpivot.csv' table='[tracks_unpivot#csv$]' type='table'>
+                <columns character-set='UTF-8' gridOrigin='A1:H10001:no:A1:H10001:1' header='yes' locale='es_ES'>
+                  <column datatype='string' name='track' ordinal='0' />
+                  <column datatype='string' name='id' ordinal='1' />
+                  <column datatype='string' name='playlist_id' ordinal='2' />
+                  <column datatype='string' name='playlist' ordinal='3' />
+                  <column datatype='boolean' name='top-track' ordinal='4' />
+                  <column datatype='integer' name='duration_ms' ordinal='5' />
+                  <column datatype='string' name='variable' ordinal='6' />
+                  <column datatype='integer' name='value' ordinal='7' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
   </datasources>
   <worksheets>
     <worksheet name='Hoja 1'>
       <table>
         <view>
-          <datasources />
+          <datasources>
+            <datasource caption='tracks_unpivot' name='federated.0baq8r00koejlp139sesq1kt9vnv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0baq8r00koejlp139sesq1kt9vnv'>
+            <column caption='angle' datatype='real' name='[Calculation_127789702426378243]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='RUNNING_SUM(&#13;&#10;2*pi()/COUNTD([variable])) + PI()/2'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column-instance column='[variable]' derivation='None' name='[none:variable:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_127789702426378243]' derivation='User' name='[usr:Calculation_127789702426378243:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' />
+            </column-instance>
+            <column caption='Variable' datatype='string' name='[variable]' role='dimension' type='nominal' />
+          </datasource-dependencies>
           <aggregation value='true' />
         </view>
         <style />
@@ -590,7 +880,11 @@
             <view>
               <breakdown value='auto' />
             </view>
-            <mark class='Automatic' />
+            <mark class='Polygon' />
+            <encodings>
+              <lod column='[federated.0baq8r00koejlp139sesq1kt9vnv].[none:variable:nk]' />
+              <lod column='[federated.0baq8r00koejlp139sesq1kt9vnv].[usr:Calculation_127789702426378243:qk]' />
+            </encodings>
           </pane>
         </panes>
         <rows />
@@ -598,9 +892,87 @@
       </table>
       <simple-id uuid='{DB0D3A15-DA9B-4369-A5F2-611907BA03CF}' />
     </worksheet>
+    <worksheet name='Hoja 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='tracks_unpivot' name='federated.0baq8r00koejlp139sesq1kt9vnv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0baq8r00koejlp139sesq1kt9vnv'>
+            <column caption='angle' datatype='real' name='[Calculation_127789702426378243]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='RUNNING_SUM(&#13;&#10;2*pi()/COUNTD([variable])) + PI()/2'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Distance From Center' datatype='real' name='[Calculation_127789702426853381]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([Calculation_127789702427570184])' />
+            </column>
+            <column caption='X' datatype='real' name='[Calculation_127789702426976262]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Calculation_127789702426853381]*COS([Calculation_127789702426378243])'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Y' datatype='real' name='[Calculation_127789702427041799]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Calculation_127789702426853381]*SIN([Calculation_127789702426378243])'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='audio_features' datatype='real' name='[Calculation_127789702427570184]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[value]/100' />
+            </column>
+            <column-instance column='[variable]' derivation='None' name='[none:variable:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_127789702426378243]' derivation='User' name='[usr:Calculation_127789702426378243:qk:2]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.0baq8r00koejlp139sesq1kt9vnv].[variable]' ordering-type='Field' />
+            </column-instance>
+            <column-instance column='[Calculation_127789702426976262]' derivation='User' name='[usr:Calculation_127789702426976262:qk:1]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' />
+              <table-calc field='[federated.0baq8r00koejlp139sesq1kt9vnv].[Calculation_127789702426378243]' ordering-field='[federated.0baq8r00koejlp139sesq1kt9vnv].[variable]' ordering-type='Field' />
+            </column-instance>
+            <column-instance column='[Calculation_127789702427041799]' derivation='User' name='[usr:Calculation_127789702427041799:qk:1]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' />
+              <table-calc field='[federated.0baq8r00koejlp139sesq1kt9vnv].[Calculation_127789702426378243]' ordering-field='[federated.0baq8r00koejlp139sesq1kt9vnv].[variable]' ordering-type='Field' />
+            </column-instance>
+            <column caption='Value' datatype='integer' name='[value]' role='dimension' type='ordinal' />
+            <column caption='Variable' datatype='string' name='[variable]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0baq8r00koejlp139sesq1kt9vnv].[none:variable:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:variable:nk]' />
+              <groupfilter function='union'>
+                <groupfilter function='member' level='[none:variable:nk]' member='&quot;loudness&quot;' />
+                <groupfilter function='member' level='[none:variable:nk]' member='&quot;tempo&quot;' />
+                <groupfilter function='member' level='[none:variable:nk]' member='&quot;valence&quot;' />
+                <groupfilter function='member' level='[none:variable:nk]' member='%null%' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0baq8r00koejlp139sesq1kt9vnv].[none:variable:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Polygon' />
+            <encodings>
+              <color column='[federated.0baq8r00koejlp139sesq1kt9vnv].[none:variable:nk]' />
+              <lod column='[federated.0baq8r00koejlp139sesq1kt9vnv].[none:variable:nk]' />
+              <lod column='[federated.0baq8r00koejlp139sesq1kt9vnv].[usr:Calculation_127789702426378243:qk:2]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0baq8r00koejlp139sesq1kt9vnv].[usr:Calculation_127789702427041799:qk:1]</rows>
+        <cols>[federated.0baq8r00koejlp139sesq1kt9vnv].[usr:Calculation_127789702426976262:qk:1]</cols>
+      </table>
+      <simple-id uuid='{AE58D80D-1028-48BF-A068-83127D08AF9C}' />
+    </worksheet>
   </worksheets>
-  <windows saved-dpi-scale-factor='1.25' source-height='37'>
-    <window class='worksheet' maximized='true' name='Hoja 1'>
+  <windows saved-dpi-scale-factor='1.25' source-height='89'>
+    <window class='worksheet' name='Hoja 1'>
       <cards>
         <edge name='left'>
           <strip size='128'>
@@ -621,23 +993,235 @@
           </strip>
         </edge>
       </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0baq8r00koejlp139sesq1kt9vnv].[none:variable:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
       <simple-id uuid='{CA2FCBC0-AFD0-41C1-AE64-C9889C56CE16}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Hoja 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='174'>
+            <card pane-specification-id='0' param='[federated.0baq8r00koejlp139sesq1kt9vnv].[none:variable:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <tuple-selection>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0baq8r00koejlp139sesq1kt9vnv].[usr:Calculation_127789702426976262:qk:1]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0baq8r00koejlp139sesq1kt9vnv].[usr:Calculation_127789702427041799:qk:1]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0baq8r00koejlp139sesq1kt9vnv].[none:variable:nk]</field>
+                  <field>[federated.0baq8r00koejlp139sesq1kt9vnv].[usr:Calculation_127789702426378243:qk:2]</field>
+                  <field>[federated.0baq8r00koejlp139sesq1kt9vnv].[usr:Calculation_127789702426976262:qk:1]</field>
+                  <field>[federated.0baq8r00koejlp139sesq1kt9vnv].[usr:Calculation_127789702427041799:qk:1]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;liveness&quot;</value>
+                <value>39.269908169872416</value>
+                <value>-2.3819441321744123e-12</value>
+                <value>9700.5100000000093</value>
+              </tuple>
+            </tuple-reference>
+          </tuple-selection>
+        </selection-collection>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0baq8r00koejlp139sesq1kt9vnv].[none:variable:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{590DC7EE-DBED-4E77-B2B0-AFBB67004DC2}' />
     </window>
   </windows>
   <thumbnails>
-    <thumbnail height='192' name='Hoja 1' width='192'>
+    <thumbnail height='24' name='Hoja 1' width='64'>
+      iVBORw0KGgoAAAANSUhEUgAAAEAAAAAYCAYAAABKtPtEAAAACXBIWXMAABJ0AAASdAHeZh94
+      AAAAS0lEQVRYhe3QQRHAMADDsHX8Oacw9KiFwOezbd/Dfh2gNUAHaA3QAVoDdIDWAB2gNUAH
+      aA3QAVoDdIDWAB2gNUAHaA3QAVoDdIB2AVXABCzFbDFLAAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='Hoja 2' width='192'>
       iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABJ0AAASdAHeZh94
-      AAACFUlEQVR4nO3TMQEAIAzAMMC/5yFjRxMFfXpnZg5Eve0A2GQA0gxAmgFIMwBpBiDNAKQZ
-      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
-      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQD
-      kGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBp
-      BiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA
-      0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDN
-      AKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxA
-      mgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZ
-      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
-      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKR9Y+0F
-      fBUOM1sAAAAASUVORK5CYII=
+      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
     </thumbnail>
   </thumbnails>
 </workbook>
