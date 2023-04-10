@@ -25,105 +25,217 @@
       <connection class='federated'>
         <named-connections>
           <named-connection caption='tracks_unpivot_normalized' name='textscan.0qynzme1bi9l2c19mc8xl134to39'>
-            <connection class='textclean' cleaning='yes' compat='no' csvFile='C:/Users/juanp/proyectos_varios/my_spotify_analysis/data/csv/tracks_unpivot_normalized.csv' dataRefreshTime='' directory='C:/Users/juanp/proyectos_varios/my_spotify_analysis/data/csv' filename='C:/Users/juanp/AppData/Local/Temp/TableauTemp/0phylue1bz789a1gtbu060iu29r7/tracks_unpivot_normalized.csv.xlsx' interpretationMode='8' password='' server='' validate='no' />
+            <connection class='textscan' cleaning='yes' compat='no' csvFile='C:/Users/juanp/proyectos_varios/my_spotify_analysis/data/csv/tracks_unpivot_normalized.csv' dataRefreshTime='' directory='C:/Users/juanp/proyectos_varios/my_spotify_analysis/data/csv' filename='C:/Users/juanp/AppData/Local/Temp/TableauTemp/0pv8awj0nb9bna1fme03z1isjyw5/tracks_unpivot_normalized.csv.xlsx' interpretationMode='8' password='' server='' validate='no' />
           </named-connection>
         </named-connections>
-        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.0qynzme1bi9l2c19mc8xl134to39' name='most_listened_to_url.csv' table='[most_listened_to_url#csv$]' type='table'>
-          <columns character-set='UTF-8' gridOrigin='A1:C6:no:A1:C6:1' header='no' locale='es_ES'>
-            <column datatype='integer' name='F1' ordinal='0' />
-            <column datatype='string' name='track' ordinal='1' />
-            <column datatype='string' name='image_url' ordinal='2' />
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.0qynzme1bi9l2c19mc8xl134to39' name='tracks_unpivot_normalized.csv' table='[tracks_unpivot_normalized#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='es_ES'>
+            <column datatype='string' name='track' ordinal='0' />
+            <column datatype='string' name='id' ordinal='1' />
+            <column datatype='string' name='playlist_id' ordinal='2' />
+            <column datatype='string' name='playlist' ordinal='3' />
+            <column datatype='string' name='mode' ordinal='4' />
+            <column datatype='string' name='key' ordinal='5' />
+            <column datatype='string' name='variable' ordinal='6' />
+            <column datatype='string' name='value' ordinal='7' />
           </columns>
         </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
-        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.0qynzme1bi9l2c19mc8xl134to39' name='most_listened_to_url.csv' table='[most_listened_to_url#csv$]' type='table'>
-          <columns character-set='UTF-8' gridOrigin='A1:C6:no:A1:C6:1' header='no' locale='es_ES'>
-            <column datatype='integer' name='F1' ordinal='0' />
-            <column datatype='string' name='track' ordinal='1' />
-            <column datatype='string' name='image_url' ordinal='2' />
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.0qynzme1bi9l2c19mc8xl134to39' name='tracks_unpivot_normalized.csv' table='[tracks_unpivot_normalized#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='es_ES'>
+            <column datatype='string' name='track' ordinal='0' />
+            <column datatype='string' name='id' ordinal='1' />
+            <column datatype='string' name='playlist_id' ordinal='2' />
+            <column datatype='string' name='playlist' ordinal='3' />
+            <column datatype='string' name='mode' ordinal='4' />
+            <column datatype='string' name='key' ordinal='5' />
+            <column datatype='string' name='variable' ordinal='6' />
+            <column datatype='string' name='value' ordinal='7' />
           </columns>
         </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
         <metadata-records>
           <metadata-record class='capability'>
             <remote-name />
             <remote-type>0</remote-type>
-            <parent-name>[most_listened_to_url.csv]</parent-name>
+            <parent-name>[tracks_unpivot_normalized.csv]</parent-name>
             <remote-alias />
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
             <attributes>
-              <attribute datatype='integer' name='context'>1</attribute>
-              <attribute datatype='string' name='gridOrigin'>&quot;A1:C6:no:A1:C6:1&quot;</attribute>
-              <attribute datatype='integer' name='lost'>0</attribute>
-              <attribute datatype='integer' name='outcome'>1</attribute>
-              <attribute datatype='integer' name='processed'>5</attribute>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;es&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;€&quot;</attribute>
+              <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;es_ES&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='thousands-char'>&quot;.&quot;</attribute>
             </attributes>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>F1</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[F1]</local-name>
-            <parent-name>[most_listened_to_url.csv]</parent-name>
-            <remote-alias>F1</remote-alias>
-            <ordinal>0</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
-            </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[most_listened_to_url.csv_F828345708764D599E80F0AE0A2274D5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>track</remote-name>
-            <remote-type>130</remote-type>
+            <remote-type>129</remote-type>
             <local-name>[track]</local-name>
-            <parent-name>[most_listened_to_url.csv]</parent-name>
+            <parent-name>[tracks_unpivot_normalized.csv]</parent-name>
             <remote-alias>track</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks_unpivot_normalized.csv_48A9D9CE12F94F76AC1980169E8603E6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[id]</local-name>
+            <parent-name>[tracks_unpivot_normalized.csv]</parent-name>
+            <remote-alias>id</remote-alias>
             <ordinal>1</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
             <contains-null>true</contains-null>
-            <collation flag='1' name='LES_RES_S2' />
-            <attributes>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
-            </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[most_listened_to_url.csv_F828345708764D599E80F0AE0A2274D5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks_unpivot_normalized.csv_48A9D9CE12F94F76AC1980169E8603E6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>image_url</remote-name>
-            <remote-type>130</remote-type>
-            <local-name>[image_url]</local-name>
-            <parent-name>[most_listened_to_url.csv]</parent-name>
-            <remote-alias>image_url</remote-alias>
+            <remote-name>playlist_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[playlist_id]</local-name>
+            <parent-name>[tracks_unpivot_normalized.csv]</parent-name>
+            <remote-alias>playlist_id</remote-alias>
             <ordinal>2</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
             <contains-null>true</contains-null>
-            <collation flag='1' name='LES_RES_S2' />
-            <attributes>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
-            </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[most_listened_to_url.csv_F828345708764D599E80F0AE0A2274D5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks_unpivot_normalized.csv_48A9D9CE12F94F76AC1980169E8603E6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>playlist</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[playlist]</local-name>
+            <parent-name>[tracks_unpivot_normalized.csv]</parent-name>
+            <remote-alias>playlist</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks_unpivot_normalized.csv_48A9D9CE12F94F76AC1980169E8603E6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>mode</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[mode]</local-name>
+            <parent-name>[tracks_unpivot_normalized.csv]</parent-name>
+            <remote-alias>mode</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks_unpivot_normalized.csv_48A9D9CE12F94F76AC1980169E8603E6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>key</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[key]</local-name>
+            <parent-name>[tracks_unpivot_normalized.csv]</parent-name>
+            <remote-alias>key</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks_unpivot_normalized.csv_48A9D9CE12F94F76AC1980169E8603E6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>variable</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[variable]</local-name>
+            <parent-name>[tracks_unpivot_normalized.csv]</parent-name>
+            <remote-alias>variable</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks_unpivot_normalized.csv_48A9D9CE12F94F76AC1980169E8603E6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>value</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[value]</local-name>
+            <parent-name>[tracks_unpivot_normalized.csv]</parent-name>
+            <remote-alias>value</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tracks_unpivot_normalized.csv_48A9D9CE12F94F76AC1980169E8603E6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
         </metadata-records>
       </connection>
       <aliases enabled='yes' />
-      <_.fcp.ObjectModelTableType.true...column caption='most_listened_to_url.csv' datatype='table' name='[__tableau_internal_object_id__].[most_listened_to_url.csv_F828345708764D599E80F0AE0A2274D5]' role='measure' type='quantitative' />
-      <column datatype='string' name='[image_url]' role='dimension' semantic-role='[URL]' type='nominal' />
+      <column caption='value_float' datatype='real' name='[Calculation_1170654440299450368]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='float([value])' />
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='tracks_unpivot_normalized.csv' datatype='table' name='[__tableau_internal_object_id__].[tracks_unpivot_normalized.csv_48A9D9CE12F94F76AC1980169E8603E6]' role='measure' type='quantitative' />
+      <column caption='Id' datatype='string' name='[id]' role='dimension' type='nominal' />
+      <column caption='Key' datatype='string' name='[key]' role='dimension' type='nominal' />
+      <column caption='Mode' datatype='string' name='[mode]' role='dimension' type='nominal' />
+      <column caption='Playlist' datatype='string' name='[playlist]' role='dimension' type='nominal' />
+      <column caption='Playlist Id' datatype='string' name='[playlist_id]' role='dimension' type='nominal' />
+      <column caption='Track' datatype='string' name='[track]' role='dimension' type='nominal' />
+      <column caption='Value' datatype='string' name='[value]' role='dimension' type='nominal' />
+      <column caption='Variable' datatype='string' name='[variable]' role='dimension' type='nominal' />
       <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
       <semantic-values>
         <semantic-value key='[Country].[Name]' value='&quot;España&quot;' />
       </semantic-values>
       <date-options start-of-week='monday' />
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='track' />
+        <field-sort-custom-order field='id' />
+        <field-sort-custom-order field='playlist_id' />
+        <field-sort-custom-order field='playlist' />
+        <field-sort-custom-order field='mode' />
+        <field-sort-custom-order field='key' />
+        <field-sort-custom-order field='variable' />
+        <field-sort-custom-order field='value' />
+        <field-sort-custom-order field='Calculation_1170654440299450368' />
+      </field-sort-info>
       <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
         <objects>
-          <object caption='most_listened_to_url.csv' id='most_listened_to_url.csv_F828345708764D599E80F0AE0A2274D5'>
+          <object caption='tracks_unpivot_normalized.csv' id='tracks_unpivot_normalized.csv_48A9D9CE12F94F76AC1980169E8603E6'>
             <properties context=''>
-              <relation connection='textscan.0qynzme1bi9l2c19mc8xl134to39' name='most_listened_to_url.csv' table='[most_listened_to_url#csv$]' type='table'>
-                <columns character-set='UTF-8' gridOrigin='A1:C6:no:A1:C6:1' header='no' locale='es_ES'>
-                  <column datatype='integer' name='F1' ordinal='0' />
-                  <column datatype='string' name='track' ordinal='1' />
-                  <column datatype='string' name='image_url' ordinal='2' />
+              <relation connection='textscan.0qynzme1bi9l2c19mc8xl134to39' name='tracks_unpivot_normalized.csv' table='[tracks_unpivot_normalized#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='es_ES'>
+                  <column datatype='string' name='track' ordinal='0' />
+                  <column datatype='string' name='id' ordinal='1' />
+                  <column datatype='string' name='playlist_id' ordinal='2' />
+                  <column datatype='string' name='playlist' ordinal='3' />
+                  <column datatype='string' name='mode' ordinal='4' />
+                  <column datatype='string' name='key' ordinal='5' />
+                  <column datatype='string' name='variable' ordinal='6' />
+                  <column datatype='string' name='value' ordinal='7' />
                 </columns>
               </relation>
             </properties>
