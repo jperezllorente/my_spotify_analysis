@@ -3,13 +3,17 @@
 <!-- build 20224.23.0209.1653                               -->
 <workbook original-version='18.1' source-build='2022.4.1 (20224.23.0209.1653)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
   <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
     <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
     <_.fcp.MarkAnimation.true...MarkAnimation />
     <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
     <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
     <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
     <SheetIdentifierTracking />
     <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
   </document-format-change-manifest>
   <preferences>
     <preference name='ui.encoding.shelf.height' value='24' />
@@ -734,11 +738,11 @@
         </relationships>
       </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
     </datasource>
-    <datasource caption='tracks_general+' inline='true' name='federated.1a236x91p1dhmt1b83ytr10q513g' version='18.1'>
+    <datasource caption='top_streaming_artists+' inline='true' name='federated.1yybgey0c2prps17aoyvi0y9hwhc' version='18.1'>
       <connection class='federated'>
         <named-connections>
-          <named-connection caption='tracks_general' name='textscan.02zmbqo06xynng1gdoa5f04xip9p'>
-            <connection class='textscan' directory='C:/Users/Juan.Perez/notebooks/otros/my_spotify_analysis/data/csv' filename='tracks_general.csv' password='' server='' />
+          <named-connection caption='top_streaming_artists' name='textscan.0bpzrn311udm5y15obfcj02t6ffl'>
+            <connection class='textscan' directory='C:/Users/Juan.Perez/notebooks/otros/my_spotify_analysis/data/csv' filename='top_streaming_artists.csv' password='' server='' />
           </named-connection>
         </named-connections>
         <_.fcp.ObjectModelEncapsulateLegacy.false...relation join='inner' type='join'>
@@ -748,110 +752,42 @@
               <expression op='1' />
             </expression>
           </clause>
-          <relation connection='textscan.02zmbqo06xynng1gdoa5f04xip9p' name='top_streaming_artists.csv' table='[top_streaming_artists#csv]' type='table'>
+          <relation connection='textscan.0bpzrn311udm5y15obfcj02t6ffl' name='top_streaming_artists.csv' table='[top_streaming_artists#csv]' type='table'>
             <columns character-set='UTF-8' header='yes' locale='es_ES'>
               <column datatype='integer' name='F1' ordinal='0' />
               <column datatype='string' name='artistName' ordinal='1' />
               <column datatype='integer' name='msPlayed' ordinal='2' />
             </columns>
           </relation>
-          <relation connection='textscan.02zmbqo06xynng1gdoa5f04xip9p' name='path_dendogram.csv' table='[path_dendogram#csv]' type='table'>
-            <columns character-set='UTF-8' header='yes' locale='es_ES' separator=','>
-              <column datatype='integer' name='Path_2' ordinal='0' />
+          <relation connection='textscan.0bpzrn311udm5y15obfcj02t6ffl' name='path_dendogram.csv' table='[path_dendogram#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='es_ES' separator='_'>
+              <column datatype='integer' name='Path' ordinal='0' />
+              <column datatype='string' name='2' ordinal='1' />
             </columns>
           </relation>
         </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
-        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
-          <relation connection='textscan.02zmbqo06xynng1gdoa5f04xip9p' name='tracks_general.csv' table='[tracks_general#csv]' type='table'>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='1' />
+              <expression op='1' />
+            </expression>
+          </clause>
+          <relation connection='textscan.0bpzrn311udm5y15obfcj02t6ffl' name='top_streaming_artists.csv' table='[top_streaming_artists#csv]' type='table'>
             <columns character-set='UTF-8' header='yes' locale='es_ES'>
               <column datatype='integer' name='F1' ordinal='0' />
-              <column datatype='string' name='track' ordinal='1' />
-              <column datatype='string' name='id' ordinal='2' />
-              <column datatype='string' name='playlist_id' ordinal='3' />
-              <column datatype='string' name='duration_ms' ordinal='4' />
+              <column datatype='string' name='artistName' ordinal='1' />
+              <column datatype='integer' name='msPlayed' ordinal='2' />
             </columns>
           </relation>
-          <relation join='inner' type='join'>
-            <clause type='join'>
-              <expression op='='>
-                <expression op='1' />
-                <expression op='1' />
-              </expression>
-            </clause>
-            <relation connection='textscan.02zmbqo06xynng1gdoa5f04xip9p' name='top_streaming_artists.csv' table='[top_streaming_artists#csv]' type='table'>
-              <columns character-set='UTF-8' header='yes' locale='es_ES'>
-                <column datatype='integer' name='F1' ordinal='0' />
-                <column datatype='string' name='artistName' ordinal='1' />
-                <column datatype='integer' name='msPlayed' ordinal='2' />
-              </columns>
-            </relation>
-            <relation connection='textscan.02zmbqo06xynng1gdoa5f04xip9p' name='path_dendogram.csv' table='[path_dendogram#csv]' type='table'>
-              <columns character-set='UTF-8' header='yes' locale='es_ES' separator=','>
-                <column datatype='integer' name='Path_2' ordinal='0' />
-              </columns>
-            </relation>
-          </relation>
-          <relation join='inner' type='join'>
-            <clause type='join'>
-              <expression op='='>
-                <expression op='1' />
-                <expression op='1' />
-              </expression>
-            </clause>
-            <relation connection='textscan.02zmbqo06xynng1gdoa5f04xip9p' name='top_streaming_songs.csv' table='[top_streaming_songs#csv]' type='table'>
-              <columns character-set='UTF-8' header='yes' locale='es_ES' separator=','>
-                <column datatype='string' name='track' ordinal='0' />
-                <column datatype='integer' name='msPlayed' ordinal='1' />
-                <column datatype='string' name='Unnamed: 0' ordinal='2' />
-                <column datatype='string' name='id' ordinal='3' />
-                <column datatype='string' name='playlist_id' ordinal='4' />
-                <column datatype='string' name='duration_ms' ordinal='5' />
-              </columns>
-            </relation>
-            <relation connection='textscan.02zmbqo06xynng1gdoa5f04xip9p' name='path_dendogram.csv1' table='[path_dendogram#csv]' type='table'>
-              <columns character-set='UTF-8' header='yes' locale='es_ES' separator=','>
-                <column datatype='integer' name='Path_2' ordinal='0' />
-              </columns>
-            </relation>
+          <relation connection='textscan.0bpzrn311udm5y15obfcj02t6ffl' name='path_dendogram.csv' table='[path_dendogram#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='es_ES' separator='_'>
+              <column datatype='integer' name='Path' ordinal='0' />
+              <column datatype='string' name='2' ordinal='1' />
+            </columns>
           </relation>
         </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
-        <cols>
-          <map key='[F1 (top_streaming_artists.csv)]' value='[top_streaming_artists.csv].[F1]' />
-          <map key='[F1]' value='[tracks_general.csv].[F1]' />
-          <map key='[Path_2 (path_dendogram.csv1)]' value='[path_dendogram.csv1].[Path_2]' />
-          <map key='[Path_2]' value='[path_dendogram.csv].[Path_2]' />
-          <map key='[Unnamed: 0]' value='[top_streaming_songs.csv].[Unnamed: 0]' />
-          <map key='[artistName]' value='[top_streaming_artists.csv].[artistName]' />
-          <map key='[duration_ms (tracks_general.csv)]' value='[tracks_general.csv].[duration_ms]' />
-          <map key='[duration_ms]' value='[top_streaming_songs.csv].[duration_ms]' />
-          <map key='[id (tracks_general.csv)]' value='[tracks_general.csv].[id]' />
-          <map key='[id]' value='[top_streaming_songs.csv].[id]' />
-          <map key='[msPlayed (top_streaming_artists.csv)]' value='[top_streaming_artists.csv].[msPlayed]' />
-          <map key='[msPlayed]' value='[top_streaming_songs.csv].[msPlayed]' />
-          <map key='[playlist_id (tracks_general.csv)]' value='[tracks_general.csv].[playlist_id]' />
-          <map key='[playlist_id]' value='[top_streaming_songs.csv].[playlist_id]' />
-          <map key='[track (tracks_general.csv)]' value='[tracks_general.csv].[track]' />
-          <map key='[track]' value='[top_streaming_songs.csv].[track]' />
-        </cols>
         <metadata-records>
-          <metadata-record class='capability'>
-            <remote-name />
-            <remote-type>0</remote-type>
-            <parent-name>[tracks_general.csv]</parent-name>
-            <remote-alias />
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
-              <attribute datatype='string' name='collation'>&quot;es&quot;</attribute>
-              <attribute datatype='string' name='currency'>&quot;€&quot;</attribute>
-              <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
-              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
-              <attribute datatype='string' name='locale'>&quot;es_ES&quot;</attribute>
-              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
-              <attribute datatype='string' name='thousands-char'>&quot;.&quot;</attribute>
-            </attributes>
-          </metadata-record>
           <metadata-record class='capability'>
             <remote-name />
             <remote-type>0</remote-type>
@@ -882,7 +818,280 @@
               <attribute datatype='string' name='collation'>&quot;es&quot;</attribute>
               <attribute datatype='string' name='currency'>&quot;€&quot;</attribute>
               <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
-              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;_&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;es_ES&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='thousands-char'>&quot;.&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[top_streaming_artists.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[top_streaming_artists.csv_F498335D01A24CC5895DA42C3FF1E84B]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>artistName</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[artistName]</local-name>
+            <parent-name>[top_streaming_artists.csv]</parent-name>
+            <remote-alias>artistName</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[top_streaming_artists.csv_F498335D01A24CC5895DA42C3FF1E84B]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>msPlayed</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[msPlayed]</local-name>
+            <parent-name>[top_streaming_artists.csv]</parent-name>
+            <remote-alias>msPlayed</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[top_streaming_artists.csv_F498335D01A24CC5895DA42C3FF1E84B]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Path</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Path]</local-name>
+            <parent-name>[path_dendogram.csv]</parent-name>
+            <remote-alias>Path</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[top_streaming_artists.csv_F498335D01A24CC5895DA42C3FF1E84B]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>2</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[2]</local-name>
+            <parent-name>[path_dendogram.csv]</parent-name>
+            <remote-alias>2</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[top_streaming_artists.csv_F498335D01A24CC5895DA42C3FF1E84B]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' hidden='true' name='[2]' role='dimension' type='nominal' />
+      <column caption='@MsPlayedArtists' datatype='real' name='[Calculation_706502208711688213]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='WINDOW_SUM(SUM([msPlayed]))/2'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='@TotalMsPlayedArtists' datatype='real' name='[Calculation_706502208711831574]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='WINDOW_SUM(SUM([msPlayed]))/2'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='@PercentageArtists' datatype='real' name='[Calculation_706502208712011799]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Calculation_706502208711688213]/[Calculation_706502208711831574]'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='@percentage_adjusted_artists' datatype='real' name='[Calculation_706502208712069144]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Calculation_706502208712011799]/WINDOW_MAX([Calculation_706502208712011799])'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='@Rank' datatype='integer' name='[Calculation_706502208712249369]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='RANK_UNIQUE([Calculation_706502208711688213], &quot;desc&quot;)'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='@XArtists' datatype='real' name='[Calculation_706502208712429594]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='(INDEX()-1)*0.12-6'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='@sigmoidartists' datatype='real' name='[Calculation_706502208712626203]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='1/(1+exp(-[Calculation_706502208712429594]))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='@YArtists' datatype='real' name='[Calculation_706502208712757276]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Calculation_706502208712626203]*([Calculation_706502208712249369]-(WINDOW_MAX([Calculation_706502208712249369])+1)/2)/100'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='@sizeArtists' datatype='integer' name='[Calculation_706502208713236509]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Calculation_706502208712429594] &gt;= 6 and [Calculation_706502208712429594] &lt;= 6+(10*[Calculation_706502208712069144]) THEN 1&#13;&#10;ELSE 0&#13;&#10;END'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Path (agrupación)' datatype='integer' name='[Path (agrupación)]' role='dimension' type='ordinal'>
+        <calculation class='bin' decimals='0' formula='[Path]' peg='0' size='1' />
+      </column>
+      <column datatype='integer' name='[Path]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='top_streaming_artists.csv' datatype='table' name='[__tableau_internal_object_id__].[top_streaming_artists.csv_F498335D01A24CC5895DA42C3FF1E84B]' role='measure' type='quantitative' />
+      <column caption='Artist Name' datatype='string' name='[artistName]' role='dimension' type='nominal' />
+      <column caption='Ms Played' datatype='integer' name='[msPlayed]' role='measure' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;España&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='top_streaming_artists.csv' id='top_streaming_artists.csv_F498335D01A24CC5895DA42C3FF1E84B'>
+            <properties context=''>
+              <relation join='inner' type='join'>
+                <clause type='join'>
+                  <expression op='='>
+                    <expression op='1' />
+                    <expression op='1' />
+                  </expression>
+                </clause>
+                <relation connection='textscan.0bpzrn311udm5y15obfcj02t6ffl' name='top_streaming_artists.csv' table='[top_streaming_artists#csv]' type='table'>
+                  <columns character-set='UTF-8' header='yes' locale='es_ES'>
+                    <column datatype='integer' name='F1' ordinal='0' />
+                    <column datatype='string' name='artistName' ordinal='1' />
+                    <column datatype='integer' name='msPlayed' ordinal='2' />
+                  </columns>
+                </relation>
+                <relation connection='textscan.0bpzrn311udm5y15obfcj02t6ffl' name='path_dendogram.csv' table='[path_dendogram#csv]' type='table'>
+                  <columns character-set='UTF-8' header='yes' locale='es_ES' separator='_'>
+                    <column datatype='integer' name='Path' ordinal='0' />
+                    <column datatype='string' name='2' ordinal='1' />
+                  </columns>
+                </relation>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+    <datasource caption='tracks_general+' inline='true' name='federated.1a236x91p1dhmt1b83ytr10q513g' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='tracks_general' name='textscan.02zmbqo06xynng1gdoa5f04xip9p'>
+            <connection class='textscan' directory='C:/Users/Juan.Perez/notebooks/otros/my_spotify_analysis/data/csv' filename='tracks_general.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.02zmbqo06xynng1gdoa5f04xip9p' name='my_streaming_history.csv' table='[my_streaming_history#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='es_ES'>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='datetime' name='endTime' ordinal='1' />
+            <column datatype='string' name='artistName' ordinal='2' />
+            <column datatype='string' name='trackName' ordinal='3' />
+            <column datatype='integer' name='msPlayed' ordinal='4' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation connection='textscan.02zmbqo06xynng1gdoa5f04xip9p' name='tracks_general.csv' table='[tracks_general#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='es_ES'>
+              <column datatype='integer' name='F1' ordinal='0' />
+              <column datatype='string' name='track' ordinal='1' />
+              <column datatype='string' name='id' ordinal='2' />
+              <column datatype='string' name='playlist_id' ordinal='3' />
+              <column datatype='string' name='duration_ms' ordinal='4' />
+            </columns>
+          </relation>
+          <relation connection='textscan.02zmbqo06xynng1gdoa5f04xip9p' name='my_streaming_history.csv' table='[my_streaming_history#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='es_ES'>
+              <column datatype='integer' name='F1' ordinal='0' />
+              <column datatype='datetime' name='endTime' ordinal='1' />
+              <column datatype='string' name='artistName' ordinal='2' />
+              <column datatype='string' name='trackName' ordinal='3' />
+              <column datatype='integer' name='msPlayed' ordinal='4' />
+            </columns>
+          </relation>
+          <relation join='inner' type='join'>
+            <clause type='join'>
+              <expression op='='>
+                <expression op='1' />
+                <expression op='1' />
+              </expression>
+            </clause>
+            <relation connection='textscan.02zmbqo06xynng1gdoa5f04xip9p' name='top_streaming_songs.csv' table='[top_streaming_songs#csv]' type='table'>
+              <columns character-set='UTF-8' header='yes' locale='es_ES' separator=','>
+                <column datatype='string' name='track' ordinal='0' />
+                <column datatype='integer' name='msPlayed' ordinal='1' />
+                <column datatype='string' name='Unnamed: 0' ordinal='2' />
+                <column datatype='string' name='id' ordinal='3' />
+                <column datatype='string' name='playlist_id' ordinal='4' />
+                <column datatype='string' name='duration_ms' ordinal='5' />
+              </columns>
+            </relation>
+            <relation connection='textscan.02zmbqo06xynng1gdoa5f04xip9p' name='path_dendogram.csv1' table='[path_dendogram#csv]' type='table'>
+              <columns character-set='UTF-8' header='yes' locale='es_ES' separator=','>
+                <column datatype='integer' name='Path_2' ordinal='0' />
+              </columns>
+            </relation>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[F1 (my_streaming_history.csv)]' value='[my_streaming_history.csv].[F1]' />
+          <map key='[F1]' value='[tracks_general.csv].[F1]' />
+          <map key='[Path_2 (path_dendogram.csv1)]' value='[path_dendogram.csv1].[Path_2]' />
+          <map key='[Unnamed: 0]' value='[top_streaming_songs.csv].[Unnamed: 0]' />
+          <map key='[artistName]' value='[my_streaming_history.csv].[artistName]' />
+          <map key='[duration_ms (tracks_general.csv)]' value='[tracks_general.csv].[duration_ms]' />
+          <map key='[duration_ms]' value='[top_streaming_songs.csv].[duration_ms]' />
+          <map key='[endTime]' value='[my_streaming_history.csv].[endTime]' />
+          <map key='[id (tracks_general.csv)]' value='[tracks_general.csv].[id]' />
+          <map key='[id]' value='[top_streaming_songs.csv].[id]' />
+          <map key='[msPlayed (my_streaming_history.csv)]' value='[my_streaming_history.csv].[msPlayed]' />
+          <map key='[msPlayed]' value='[top_streaming_songs.csv].[msPlayed]' />
+          <map key='[playlist_id (tracks_general.csv)]' value='[tracks_general.csv].[playlist_id]' />
+          <map key='[playlist_id]' value='[top_streaming_songs.csv].[playlist_id]' />
+          <map key='[track (tracks_general.csv)]' value='[tracks_general.csv].[track]' />
+          <map key='[trackName]' value='[my_streaming_history.csv].[trackName]' />
+          <map key='[track]' value='[top_streaming_songs.csv].[track]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[tracks_general.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;es&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;€&quot;</attribute>
+              <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;es_ES&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='thousands-char'>&quot;.&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[my_streaming_history.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;es&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;€&quot;</attribute>
+              <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
               <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
               <attribute datatype='string' name='locale'>&quot;es_ES&quot;</attribute>
               <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
@@ -1002,53 +1211,68 @@
           <metadata-record class='column'>
             <remote-name>F1</remote-name>
             <remote-type>20</remote-type>
-            <local-name>[F1 (top_streaming_artists.csv)]</local-name>
-            <parent-name>[top_streaming_artists.csv]</parent-name>
+            <local-name>[F1 (my_streaming_history.csv)]</local-name>
+            <parent-name>[my_streaming_history.csv]</parent-name>
             <remote-alias>F1</remote-alias>
             <ordinal>5</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[top_streaming_artists.csv_C6FE0C3079C3420697217118B9796485]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[my_streaming_history.csv_24D4F27C774245F783440285CBFE81C5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>endTime</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[endTime]</local-name>
+            <parent-name>[my_streaming_history.csv]</parent-name>
+            <remote-alias>endTime</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[my_streaming_history.csv_24D4F27C774245F783440285CBFE81C5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>artistName</remote-name>
             <remote-type>129</remote-type>
             <local-name>[artistName]</local-name>
-            <parent-name>[top_streaming_artists.csv]</parent-name>
+            <parent-name>[my_streaming_history.csv]</parent-name>
             <remote-alias>artistName</remote-alias>
-            <ordinal>6</ordinal>
+            <ordinal>7</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
             <width>1073741823</width>
             <contains-null>true</contains-null>
             <collation flag='0' name='LES_RES' />
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[top_streaming_artists.csv_C6FE0C3079C3420697217118B9796485]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[my_streaming_history.csv_24D4F27C774245F783440285CBFE81C5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>trackName</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[trackName]</local-name>
+            <parent-name>[my_streaming_history.csv]</parent-name>
+            <remote-alias>trackName</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[my_streaming_history.csv_24D4F27C774245F783440285CBFE81C5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>msPlayed</remote-name>
             <remote-type>20</remote-type>
-            <local-name>[msPlayed (top_streaming_artists.csv)]</local-name>
-            <parent-name>[top_streaming_artists.csv]</parent-name>
+            <local-name>[msPlayed (my_streaming_history.csv)]</local-name>
+            <parent-name>[my_streaming_history.csv]</parent-name>
             <remote-alias>msPlayed</remote-alias>
-            <ordinal>7</ordinal>
+            <ordinal>9</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[top_streaming_artists.csv_C6FE0C3079C3420697217118B9796485]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>Path_2</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[Path_2]</local-name>
-            <parent-name>[path_dendogram.csv]</parent-name>
-            <remote-alias>Path_2</remote-alias>
-            <ordinal>8</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[top_streaming_artists.csv_C6FE0C3079C3420697217118B9796485]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[my_streaming_history.csv_24D4F27C774245F783440285CBFE81C5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>track</remote-name>
@@ -1056,7 +1280,7 @@
             <local-name>[track]</local-name>
             <parent-name>[top_streaming_songs.csv]</parent-name>
             <remote-alias>track</remote-alias>
-            <ordinal>9</ordinal>
+            <ordinal>10</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -1071,7 +1295,7 @@
             <local-name>[msPlayed]</local-name>
             <parent-name>[top_streaming_songs.csv]</parent-name>
             <remote-alias>msPlayed</remote-alias>
-            <ordinal>10</ordinal>
+            <ordinal>11</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -1083,7 +1307,7 @@
             <local-name>[Unnamed: 0]</local-name>
             <parent-name>[top_streaming_songs.csv]</parent-name>
             <remote-alias>Unnamed: 0</remote-alias>
-            <ordinal>11</ordinal>
+            <ordinal>12</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -1098,7 +1322,7 @@
             <local-name>[id]</local-name>
             <parent-name>[top_streaming_songs.csv]</parent-name>
             <remote-alias>id</remote-alias>
-            <ordinal>12</ordinal>
+            <ordinal>13</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -1113,7 +1337,7 @@
             <local-name>[playlist_id]</local-name>
             <parent-name>[top_streaming_songs.csv]</parent-name>
             <remote-alias>playlist_id</remote-alias>
-            <ordinal>13</ordinal>
+            <ordinal>14</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -1128,7 +1352,7 @@
             <local-name>[duration_ms]</local-name>
             <parent-name>[top_streaming_songs.csv]</parent-name>
             <remote-alias>duration_ms</remote-alias>
-            <ordinal>14</ordinal>
+            <ordinal>15</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -1143,7 +1367,7 @@
             <local-name>[Path_2 (path_dendogram.csv1)]</local-name>
             <parent-name>[path_dendogram.csv1]</parent-name>
             <remote-alias>Path_2</remote-alias>
-            <ordinal>15</ordinal>
+            <ordinal>16</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -1152,41 +1376,6 @@
         </metadata-records>
       </connection>
       <aliases enabled='yes' />
-      <column caption='@MsPlayedArtists' datatype='real' name='[@MsPlayedSongs (copia)_1572600711715487744]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='WINDOW_SUM(SUM([msPlayed (top_streaming_artists.csv)]))/2'>
-          <table-calc ordering-type='Rows' />
-        </calculation>
-      </column>
-      <column caption='@PercentageAdjustedArtists' datatype='real' name='[@PercentageAdjustedSongs (copia)_1572600711715987460]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='[@PercentageSongs (copia)_1572600711715872771]/WINDOW_MAX([@PercentageSongs (copia)_1572600711715872771])'>
-          <table-calc ordering-type='Rows' />
-        </calculation>
-      </column>
-      <column caption='@PercentageArtists' datatype='real' name='[@PercentageSongs (copia)_1572600711715872771]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='[@MsPlayedSongs (copia)_1572600711715487744]/[@TotalSecondsSongs (copia)_1572600711715778562]'>
-          <table-calc ordering-type='Rows' />
-        </calculation>
-      </column>
-      <column caption='@Rank_artists' datatype='integer' name='[@Rank_songs (copia)_1572600711716118533]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='RANK_UNIQUE([@MsPlayedSongs (copia)_1572600711715487744],&quot;desc&quot;)'>
-          <table-calc ordering-type='Rows' />
-        </calculation>
-      </column>
-      <column caption='@TotalSecondsArtists' datatype='real' name='[@TotalSecondsSongs (copia)_1572600711715778562]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='WINDOW_SUM(SUM([msPlayed (top_streaming_artists.csv)]))/2'>
-          <table-calc ordering-type='Rows' />
-        </calculation>
-      </column>
-      <column caption='@Y_artists' datatype='real' name='[@Y_songs (copia)_1572600711716368391]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='[Calculation_155092728540135434]*([@Rank_songs (copia)_1572600711716118533]-(window_max([@Rank_songs (copia)_1572600711716118533])+1)/2)/100'>
-          <table-calc ordering-type='Rows' />
-        </calculation>
-      </column>
-      <column caption='@size_artists' datatype='integer' name='[@size_songs (copia)_1572600711716253702]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='IF [Calculation_155092728539787273]&gt;=6 and [Calculation_155092728539787273]&lt;= 6+(10*[@PercentageAdjustedSongs (copia)_1572600711715987460]) THEN 1&#13;&#10;ELSE 0&#13;&#10;END'>
-          <table-calc ordering-type='Rows' />
-        </calculation>
-      </column>
       <column caption='indice' datatype='integer' name='[Calculation_1226949440275279876]' role='measure' type='quantitative'>
         <calculation class='tableau' formula='INDEX()'>
           <table-calc ordering-field='[federated.1a236x91p1dhmt1b83ytr10q513g].[track]' ordering-type='Field' />
@@ -1237,22 +1426,19 @@
           <table-calc ordering-type='Rows' />
         </calculation>
       </column>
-      <column caption='F1 (top streaming artists.csv)' datatype='integer' name='[F1 (top_streaming_artists.csv)]' role='measure' type='quantitative' />
+      <column caption='F1 (my streaming history.csv)' datatype='integer' name='[F1 (my_streaming_history.csv)]' role='measure' type='quantitative' />
       <column aggregation='None' caption='Path 2 (path dendogram.csv1) (agrupación)' datatype='integer' name='[Path 2 (path dendogram.csv1) (agrupación)]' role='dimension' type='ordinal'>
         <calculation class='bin' decimals='0' formula='[Path_2 (path_dendogram.csv1)]' peg='0' size='1' />
       </column>
-      <column aggregation='None' caption='Path_2 (agrupación)' datatype='integer' name='[Path_2 (agrupación)]' role='dimension' type='ordinal'>
-        <calculation class='bin' decimals='0' formula='[Path_2]' peg='0' size='1' />
-      </column>
       <column caption='Path 2 (path dendogram.csv1)' datatype='integer' name='[Path_2 (path_dendogram.csv1)]' role='measure' type='quantitative' />
-      <column datatype='integer' name='[Path_2]' role='measure' type='quantitative' />
-      <_.fcp.ObjectModelTableType.true...column caption='top_streaming_artists.csv' datatype='table' name='[__tableau_internal_object_id__].[top_streaming_artists.csv_C6FE0C3079C3420697217118B9796485]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='my_streaming_history.csv' datatype='table' name='[__tableau_internal_object_id__].[my_streaming_history.csv_24D4F27C774245F783440285CBFE81C5]' role='measure' type='quantitative' />
       <_.fcp.ObjectModelTableType.true...column caption='top_streaming_songs.csv' datatype='table' name='[__tableau_internal_object_id__].[top_streaming_songs.csv_1B40A6394735420594390EB580D40A09]' role='measure' type='quantitative' />
       <_.fcp.ObjectModelTableType.true...column caption='tracks_general.csv' datatype='table' name='[__tableau_internal_object_id__].[tracks_general.csv_52CA4CE02276442D9BA7AA59647A6D1C]' role='measure' type='quantitative' />
       <column caption='Artist Name' datatype='string' name='[artistName]' role='dimension' type='nominal' />
-      <column caption='msPlayed (top streaming artists.csv)' datatype='integer' name='[msPlayed (top_streaming_artists.csv)]' role='measure' type='quantitative' />
+      <column caption='End Time' datatype='datetime' name='[endTime]' role='dimension' type='ordinal' />
+      <column caption='msPlayed (my streaming history.csv)' datatype='integer' name='[msPlayed (my_streaming_history.csv)]' role='measure' type='quantitative' />
+      <column caption='Track Name' datatype='string' name='[trackName]' role='dimension' type='nominal' />
       <column datatype='string' name='[track]' role='dimension' type='nominal' />
-      <column-instance column='[artistName]' derivation='None' name='[none:artistName:nk]' pivot='key' type='nominal' />
       <column-instance column='[track]' derivation='None' name='[none:track:nk]' pivot='key' type='nominal' />
       <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
       <style>
@@ -1394,161 +1580,6 @@
               <bucket>&quot;You’re The Best Thing About Me - U2 Vs. Kygo&quot;</bucket>
             </map>
           </encoding>
-          <encoding attr='color' field='[none:artistName:nk]' type='palette'>
-            <map to='#499894'>
-              <bucket>&quot;El Canto Del Loco&quot;</bucket>
-            </map>
-            <map to='#499894'>
-              <bucket>&quot;Melendi&quot;</bucket>
-            </map>
-            <map to='#499894'>
-              <bucket>&quot;Yuki Hayashi&quot;</bucket>
-            </map>
-            <map to='#4e79a7'>
-              <bucket>%null%</bucket>
-            </map>
-            <map to='#4e79a7'>
-              <bucket>&quot;Ainoa Buitrago&quot;</bucket>
-            </map>
-            <map to='#4e79a7'>
-              <bucket>&quot;John Powell&quot;</bucket>
-            </map>
-            <map to='#4e79a7'>
-              <bucket>&quot;Taburete&quot;</bucket>
-            </map>
-            <map to='#59a14f'>
-              <bucket>&quot;Bizarrap&quot;</bucket>
-            </map>
-            <map to='#59a14f'>
-              <bucket>&quot;Lex Fridman Podcast&quot;</bucket>
-            </map>
-            <map to='#59a14f'>
-              <bucket>&quot;U2&quot;</bucket>
-            </map>
-            <map to='#79706e'>
-              <bucket>&quot;Guitarricadelafuente&quot;</bucket>
-            </map>
-            <map to='#79706e'>
-              <bucket>&quot;Paula Mattheus&quot;</bucket>
-            </map>
-            <map to='#86bcb6'>
-              <bucket>&quot;Eminem&quot;</bucket>
-            </map>
-            <map to='#86bcb6'>
-              <bucket>&quot;Morat&quot;</bucket>
-            </map>
-            <map to='#86bcb6'>
-              <bucket>&quot;Ziggy Alberts&quot;</bucket>
-            </map>
-            <map to='#8cd17d'>
-              <bucket>&quot;Business Breakdowns&quot;</bucket>
-            </map>
-            <map to='#8cd17d'>
-              <bucket>&quot;Los Aslándticos&quot;</bucket>
-            </map>
-            <map to='#8cd17d'>
-              <bucket>&quot;Veintiuno&quot;</bucket>
-            </map>
-            <map to='#9d7660'>
-              <bucket>&quot;IZAL&quot;</bucket>
-            </map>
-            <map to='#9d7660'>
-              <bucket>&quot;SRTW&quot;</bucket>
-            </map>
-            <map to='#a0cbe8'>
-              <bucket>&quot;All-In with Chamath, Jason, Sacks &amp; Friedberg&quot;</bucket>
-            </map>
-            <map to='#a0cbe8'>
-              <bucket>&quot;Jordy Maxwell&quot;</bucket>
-            </map>
-            <map to='#a0cbe8'>
-              <bucket>&quot;The Lowe Bros&quot;</bucket>
-            </map>
-            <map to='#b07aa1'>
-              <bucket>&quot;ILLENIUM&quot;</bucket>
-            </map>
-            <map to='#b07aa1'>
-              <bucket>&quot;Roo Panes&quot;</bucket>
-            </map>
-            <map to='#b6992d'>
-              <bucket>&quot;C. Tangana&quot;</bucket>
-            </map>
-            <map to='#b6992d'>
-              <bucket>&quot;Luis Fercán&quot;</bucket>
-            </map>
-            <map to='#b6992d'>
-              <bucket>&quot;Woodlock&quot;</bucket>
-            </map>
-            <map to='#bab0ac'>
-              <bucket>&quot;Hans Zimmer&quot;</bucket>
-            </map>
-            <map to='#bab0ac'>
-              <bucket>&quot;RADWIMPS&quot;</bucket>
-            </map>
-            <map to='#d37295'>
-              <bucket>&quot;Hogland&quot;</bucket>
-            </map>
-            <map to='#d37295'>
-              <bucket>&quot;Ramin Djawadi&quot;</bucket>
-            </map>
-            <map to='#d4a6c8'>
-              <bucket>&quot;Inazio&quot;</bucket>
-            </map>
-            <map to='#d4a6c8'>
-              <bucket>&quot;Sons Of The East&quot;</bucket>
-            </map>
-            <map to='#d7b5a6'>
-              <bucket>&quot;Jaguayano&quot;</bucket>
-            </map>
-            <map to='#d7b5a6'>
-              <bucket>&quot;Stay Homas&quot;</bucket>
-            </map>
-            <map to='#e15759'>
-              <bucket>&quot;ERRE&quot;</bucket>
-            </map>
-            <map to='#e15759'>
-              <bucket>&quot;Mumford &amp; Sons&quot;</bucket>
-            </map>
-            <map to='#f1ce63'>
-              <bucket>&quot;Ehrling&quot;</bucket>
-            </map>
-            <map to='#f1ce63'>
-              <bucket>&quot;MARLENA&quot;</bucket>
-            </map>
-            <map to='#f1ce63'>
-              <bucket>&quot;Yoly Saa&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;Así empecé&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;Kygo&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;The Wild Project&quot;</bucket>
-            </map>
-            <map to='#fabfd2'>
-              <bucket>&quot;Howard Shore&quot;</bucket>
-            </map>
-            <map to='#fabfd2'>
-              <bucket>&quot;RIOPY&quot;</bucket>
-            </map>
-            <map to='#ff9d9a'>
-              <bucket>&quot;Felipe Baldomir&quot;</bucket>
-            </map>
-            <map to='#ff9d9a'>
-              <bucket>&quot;Noah Kahan&quot;</bucket>
-            </map>
-            <map to='#ffbe7d'>
-              <bucket>&quot;Bad Bunny&quot;</bucket>
-            </map>
-            <map to='#ffbe7d'>
-              <bucket>&quot;La Maravillosa Orquesta del Alcohol&quot;</bucket>
-            </map>
-            <map to='#ffbe7d'>
-              <bucket>&quot;Tu Otra Bonita&quot;</bucket>
-            </map>
-          </encoding>
         </style-rule>
       </style>
       <semantic-values>
@@ -1560,27 +1591,16 @@
       </datasource-dependencies>
       <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
         <objects>
-          <object caption='top_streaming_artists.csv' id='top_streaming_artists.csv_C6FE0C3079C3420697217118B9796485'>
+          <object caption='my_streaming_history.csv' id='my_streaming_history.csv_24D4F27C774245F783440285CBFE81C5'>
             <properties context=''>
-              <relation join='inner' type='join'>
-                <clause type='join'>
-                  <expression op='='>
-                    <expression op='1' />
-                    <expression op='1' />
-                  </expression>
-                </clause>
-                <relation connection='textscan.02zmbqo06xynng1gdoa5f04xip9p' name='top_streaming_artists.csv' table='[top_streaming_artists#csv]' type='table'>
-                  <columns character-set='UTF-8' header='yes' locale='es_ES'>
-                    <column datatype='integer' name='F1' ordinal='0' />
-                    <column datatype='string' name='artistName' ordinal='1' />
-                    <column datatype='integer' name='msPlayed' ordinal='2' />
-                  </columns>
-                </relation>
-                <relation connection='textscan.02zmbqo06xynng1gdoa5f04xip9p' name='path_dendogram.csv' table='[path_dendogram#csv]' type='table'>
-                  <columns character-set='UTF-8' header='yes' locale='es_ES' separator=','>
-                    <column datatype='integer' name='Path_2' ordinal='0' />
-                  </columns>
-                </relation>
+              <relation connection='textscan.02zmbqo06xynng1gdoa5f04xip9p' name='my_streaming_history.csv' table='[my_streaming_history#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='es_ES'>
+                  <column datatype='integer' name='F1' ordinal='0' />
+                  <column datatype='datetime' name='endTime' ordinal='1' />
+                  <column datatype='string' name='artistName' ordinal='2' />
+                  <column datatype='string' name='trackName' ordinal='3' />
+                  <column datatype='integer' name='msPlayed' ordinal='4' />
+                </columns>
               </relation>
             </properties>
           </object>
@@ -1629,10 +1649,10 @@
           <relationship>
             <expression op='='>
               <expression op='[F1]' />
-              <expression op='[F1 (top_streaming_artists.csv)]' />
+              <expression op='[F1 (my_streaming_history.csv)]' />
             </expression>
             <first-end-point object-id='tracks_general.csv_52CA4CE02276442D9BA7AA59647A6D1C' />
-            <second-end-point object-id='top_streaming_artists.csv_C6FE0C3079C3420697217118B9796485' />
+            <second-end-point object-id='my_streaming_history.csv_24D4F27C774245F783440285CBFE81C5' />
           </relationship>
           <relationship>
             <expression op='='>
@@ -1650,28 +1670,179 @@
     <worksheet name='artists_dendogram'>
       <table>
         <view>
-          <datasources />
+          <datasources>
+            <datasource caption='top_streaming_artists+' name='federated.1yybgey0c2prps17aoyvi0y9hwhc' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1yybgey0c2prps17aoyvi0y9hwhc'>
+            <column caption='@MsPlayedArtists' datatype='real' name='[Calculation_706502208711688213]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='WINDOW_SUM(SUM([msPlayed]))/2'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='@TotalMsPlayedArtists' datatype='real' name='[Calculation_706502208711831574]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='WINDOW_SUM(SUM([msPlayed]))/2'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='@PercentageArtists' datatype='real' name='[Calculation_706502208712011799]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Calculation_706502208711688213]/[Calculation_706502208711831574]'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='@percentage_adjusted_artists' datatype='real' name='[Calculation_706502208712069144]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Calculation_706502208712011799]/WINDOW_MAX([Calculation_706502208712011799])'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='@Rank' datatype='integer' name='[Calculation_706502208712249369]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='RANK_UNIQUE([Calculation_706502208711688213], &quot;desc&quot;)'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='@XArtists' datatype='real' name='[Calculation_706502208712429594]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='(INDEX()-1)*0.12-6'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='@sigmoidartists' datatype='real' name='[Calculation_706502208712626203]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='1/(1+exp(-[Calculation_706502208712429594]))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='@YArtists' datatype='real' name='[Calculation_706502208712757276]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Calculation_706502208712626203]*([Calculation_706502208712249369]-(WINDOW_MAX([Calculation_706502208712249369])+1)/2)/100'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='@sizeArtists' datatype='integer' name='[Calculation_706502208713236509]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Calculation_706502208712429594] &gt;= 6 and [Calculation_706502208712429594] &lt;= 6+(10*[Calculation_706502208712069144]) THEN 1&#13;&#10;ELSE 0&#13;&#10;END'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Path (agrupación)' datatype='integer' name='[Path (agrupación)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='0' formula='[Path]' peg='0' size='1' />
+            </column>
+            <column datatype='integer' name='[Path]' role='measure' type='quantitative' />
+            <column caption='Artist Name' datatype='string' name='[artistName]' role='dimension' type='nominal' />
+            <column caption='Ms Played' datatype='integer' name='[msPlayed]' role='measure' type='quantitative' />
+            <column-instance column='[Path (agrupación)]' derivation='None' name='[none:Path (agrupación):ok]' pivot='key' type='ordinal' />
+            <column-instance column='[artistName]' derivation='None' name='[none:artistName:nk]' pivot='key' type='nominal' />
+            <column-instance column='[msPlayed]' derivation='None' name='[none:msPlayed:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_706502208711688213]' derivation='User' name='[usr:Calculation_706502208711688213:qk:1]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[Path (agrupación)]' ordering-type='Field' />
+            </column-instance>
+            <column-instance column='[Calculation_706502208712429594]' derivation='User' name='[usr:Calculation_706502208712429594:qk:2]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[Path (agrupación)]' ordering-type='Field' />
+            </column-instance>
+            <column-instance column='[Calculation_706502208712757276]' derivation='User' name='[usr:Calculation_706502208712757276:qk:8]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[artistName]' ordering-type='Field' />
+              <table-calc field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[Calculation_706502208712626203]' ordering-field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[Path (agrupación)]' ordering-type='Field' />
+              <table-calc field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[Calculation_706502208712429594]' ordering-field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[Path (agrupación)]' ordering-type='Field' />
+              <table-calc field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[Calculation_706502208712249369]' ordering-field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[artistName]' ordering-type='Field' />
+              <table-calc field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[Calculation_706502208711688213]' ordering-field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[Path (agrupación)]' ordering-type='Field' />
+            </column-instance>
+            <column-instance column='[Calculation_706502208713236509]' derivation='User' name='[usr:Calculation_706502208713236509:qk:7]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[Path (agrupación)]' ordering-type='Field' />
+              <table-calc field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[Calculation_706502208712429594]' ordering-field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[Path (agrupación)]' ordering-type='Field' />
+              <table-calc field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[Calculation_706502208712069144]' ordering-type='Field'>
+                <order field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[artistName]' />
+                <order field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[Path (agrupación)]' />
+              </table-calc>
+              <table-calc field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[Calculation_706502208712011799]' ordering-field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[Path (agrupación)]' ordering-type='Field' />
+              <table-calc field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[Calculation_706502208711688213]' ordering-field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[Path (agrupación)]' ordering-type='Field' />
+              <table-calc field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[Calculation_706502208711831574]' ordering-type='Field'>
+                <order field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[artistName]' />
+                <order field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[Path (agrupación)]' />
+              </table-calc>
+            </column-instance>
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[none:artistName:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:artistName:nk]' />
+              <groupfilter function='union'>
+                <groupfilter function='member' level='[none:artistName:nk]' member='&quot;All-In with Chamath, Jason, Sacks &amp; Friedberg&quot;' />
+                <groupfilter function='member' level='[none:artistName:nk]' member='&quot;Eminem&quot;' />
+                <groupfilter function='member' level='[none:artistName:nk]' member='&quot;Lex Fridman Podcast&quot;' />
+                <groupfilter function='member' level='[none:artistName:nk]' member='&quot;The Wild Project&quot;' />
+                <groupfilter function='member' level='[none:artistName:nk]' member='%null%' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <filter class='quantitative' column='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[none:msPlayed:qk]' included-values='in-range'>
+            <min>28891397</min>
+            <max>59971990</max>
+          </filter>
+          <slices>
+            <column>[federated.1yybgey0c2prps17aoyvi0y9hwhc].[none:msPlayed:qk]</column>
+            <column>[federated.1yybgey0c2prps17aoyvi0y9hwhc].[none:artistName:nk]</column>
+          </slices>
           <aggregation value='true' />
         </view>
-        <style />
+        <style>
+          <style-rule element='axis'>
+            <format attr='height' field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[usr:Calculation_706502208712429594:qk:2]' value='263' />
+            <encoding attr='space' class='0' field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[usr:Calculation_706502208712429594:qk:2]' field-type='quantitative' max='17.423343604713789' min='-7.1248534952501696' range-type='fixed' reverse='true' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[usr:Calculation_706502208712757276:qk:8]' field-type='quantitative' max='0.024643916491706639' min='-0.027146400878284058' range-type='fixed' scope='rows' type='space' />
+            <format attr='display' class='0' field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[usr:Calculation_706502208712429594:qk:2]' scope='cols' value='false' />
+            <format attr='display' class='0' field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[usr:Calculation_706502208712757276:qk:8]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[usr:Calculation_706502208711688213:qk:1]' min='27500000.0' type='custom-interpolated'>
+              <color-palette custom='true' name='' type='ordered-sequential'>
+                <color>#f1f1f1</color>
+                <color>#d8edd6</color>
+                <color>#c0eabd</color>
+                <color>#a8e6a4</color>
+                <color>#91e38b</color>
+                <color>#7be074</color>
+                <color>#65dc5d</color>
+                <color>#50d947</color>
+                <color>#3cd531</color>
+                <color>#28d21c</color>
+                <color>#15cf08</color>
+              </color-palette>
+            </encoding>
+          </style-rule>
+        </style>
         <panes>
-          <pane selection-relaxation-option='selection-relaxation-allow'>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
             <view>
               <breakdown value='auto' />
             </view>
             <mark class='Line' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[usr:Calculation_706502208711688213:qk:1]' />
+              <size column='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[usr:Calculation_706502208713236509:qk:7]' />
+              <text column='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[none:artistName:nk]' />
+              <lod column='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[none:Path (agrupación):ok]' />
+            </encodings>
+            <customized-label>
+              <formatted-text />
+            </customized-label>
             <style>
               <style-rule element='mark'>
+                <format attr='size' value='0.49375692009925842' />
+                <format attr='mark-labels-show' value='true' />
                 <format attr='mark-labels-cull' value='true' />
-                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='422' />
+                <format attr='maxwidth' value='422' />
+                <format attr='minheight' value='380' />
+                <format attr='maxheight' value='380' />
+                <format attr='aspect' value='0' />
               </style-rule>
             </style>
           </pane>
         </panes>
-        <rows />
-        <cols />
+        <rows>[federated.1yybgey0c2prps17aoyvi0y9hwhc].[usr:Calculation_706502208712757276:qk:8]</rows>
+        <cols>[federated.1yybgey0c2prps17aoyvi0y9hwhc].[usr:Calculation_706502208712429594:qk:2]</cols>
+        <show-full-range>
+          <column>[federated.1yybgey0c2prps17aoyvi0y9hwhc].[Path (agrupación)]</column>
+        </show-full-range>
       </table>
-      <simple-id uuid='{B5D59E2E-0C35-4C43-8CED-CCBE27AE401A}' />
+      <simple-id uuid='{84678094-7C2C-4434-90F3-0CA8498770E5}' />
     </worksheet>
     <worksheet name='circular_radial'>
       <table>
@@ -1832,6 +2003,53 @@
       </table>
       <simple-id uuid='{B1823D00-9592-4905-A875-FE910AA7453E}' />
     </worksheet>
+    <worksheet name='msplayed'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontsize='11'>&lt;</run>
+            <run fontalignment='1' fontsize='11'>Sheet Name</run>
+            <run fontalignment='1' fontsize='11'>&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='tracks_general+' name='federated.1a236x91p1dhmt1b83ytr10q513g' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1a236x91p1dhmt1b83ytr10q513g'>
+            <column caption='msPlayed (my streaming history.csv)' datatype='integer' name='[msPlayed (my_streaming_history.csv)]' role='measure' type='quantitative' />
+            <column-instance column='[msPlayed (my_streaming_history.csv)]' derivation='Sum' name='[sum:msPlayed (my_streaming_history.csv):qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='worksheet'>
+            <format attr='font-size' value='20' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.1a236x91p1dhmt1b83ytr10q513g].[sum:msPlayed (my_streaming_history.csv):qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{6D4C5ADA-0495-4156-9B06-E329352EA290}' />
+    </worksheet>
     <worksheet name='songs_dendogram'>
       <table>
         <view>
@@ -1937,8 +2155,10 @@
         <style>
           <style-rule element='axis'>
             <encoding attr='space' class='0' field='[federated.1a236x91p1dhmt1b83ytr10q513g].[usr:Calculation_155092728539787273:qk:3]' field-type='quantitative' max='17.962225947717279' min='-7.8416790610011304' range-type='fixed' scope='cols' type='space' />
-            <encoding attr='space' class='0' field='[federated.1a236x91p1dhmt1b83ytr10q513g].[usr:Calculation_155092728540323851:qk:9]' field-type='quantitative' max='0.040000000000000001' min='-0.040000000000000001' range-type='fixed' scope='rows' type='space' />
+            <encoding attr='space' class='0' field='[federated.1a236x91p1dhmt1b83ytr10q513g].[usr:Calculation_155092728540323851:qk:9]' field-type='quantitative' max='0.03' min='-0.03' range-type='fixed' scope='rows' type='space' />
             <format attr='height' field='[federated.1a236x91p1dhmt1b83ytr10q513g].[usr:Calculation_155092728539787273:qk:3]' value='177' />
+            <format attr='display' class='0' field='[federated.1a236x91p1dhmt1b83ytr10q513g].[usr:Calculation_155092728540323851:qk:9]' scope='rows' value='false' />
+            <format attr='display' class='0' field='[federated.1a236x91p1dhmt1b83ytr10q513g].[usr:Calculation_155092728539787273:qk:3]' scope='cols' value='false' />
           </style-rule>
           <style-rule element='mark'>
             <encoding attr='color' field='[federated.1a236x91p1dhmt1b83ytr10q513g].[usr:Calculation_155092728539037700:qk:2]' min='9500000.0' num-steps='3' type='custom-interpolated'>
@@ -1998,7 +2218,96 @@
       <simple-id uuid='{6F6D33ED-AA92-44BE-8FE6-DCD7F67E2662}' />
     </worksheet>
   </worksheets>
-  <windows saved-dpi-scale-factor='1.5' source-height='75'>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' preset-index='17' sizing-mode='fixed' />
+      <zones>
+        <zone h='12125' id='3' param='horz' type-v2='layout-flow' w='32100' x='34300' y='16000'>
+          <zone h='12125' id='5' name='msplayed' w='32100' x='34300' y='16000'>
+            <layout-cache cell-count-w='1' type-h='cell' type-w='cell' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+        </zone>
+        <zone h='37500' id='8' param='vert' type-v2='layout-flow' w='35000' x='65900' y='6000'>
+          <zone h='37500' id='9' name='songs_dendogram' show-title='false' w='35000' x='65900' y='6000'>
+            <layout-cache minheight='100' type-h='scalable' type-w='fixed' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+        </zone>
+        <zone h='37500' id='10' param='vert' type-v2='layout-flow' w='35000' x='2900' y='6750'>
+          <zone h='37500' id='11' name='artists_dendogram' show-title='false' w='35000' x='2900' y='6750'>
+            <layout-cache has-max-size-h='true' maxheight='380' minheight='380' type-h='scalable' type-w='fixed' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='15' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='14' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='37500' id='9' is-fixed='true' name='songs_dendogram' show-title='false' w='35000' x='65900' y='6000'>
+                  <layout-cache minheight='100' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='37500' id='11' is-fixed='true' name='artists_dendogram' show-title='false' w='35000' x='2900' y='6750'>
+                  <layout-cache has-max-size-h='true' maxheight='380' minheight='380' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='89' h='12125' id='5' is-fixed='true' name='msplayed' w='32100' x='34300' y='16000'>
+                  <layout-cache cell-count-w='1' type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{D93BF3FB-169B-4072-BA9A-E0574EFD4217}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.5' source-height='106'>
     <window class='worksheet' name='circular_radial'>
       <cards>
         <edge name='left'>
@@ -2036,10 +2345,10 @@
       </viewpoint>
       <simple-id uuid='{A6E9BB40-BC3D-4A04-9FBE-E72C5FB8B8B4}' />
     </window>
-    <window class='worksheet' maximized='true' name='songs_dendogram'>
+    <window class='worksheet' name='songs_dendogram'>
       <cards>
         <edge name='left'>
-          <strip size='106'>
+          <strip size='100'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
@@ -2052,12 +2361,12 @@
           <strip size='2147483647'>
             <card type='rows' />
           </strip>
-          <strip size='26'>
+          <strip size='17'>
             <card type='title' />
           </strip>
         </edge>
         <edge name='right'>
-          <strip size='174'>
+          <strip size='116'>
             <card pane-specification-id='1' param='[federated.1a236x91p1dhmt1b83ytr10q513g].[usr:Calculation_155092728539037700:qk:2]' type='color' />
             <card pane-specification-id='1' param='[federated.1a236x91p1dhmt1b83ytr10q513g].[usr:Calculation_155092728540635148:qk:15]' type='size' />
           </strip>
@@ -2079,6 +2388,44 @@
     <window class='worksheet' name='artists_dendogram'>
       <cards>
         <edge name='left'>
+          <strip size='106'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='20'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='174'>
+            <card pane-specification-id='2' param='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[usr:Calculation_706502208713236509:qk:7]' type='size' />
+            <card pane-specification-id='2' param='[federated.1yybgey0c2prps17aoyvi0y9hwhc].[usr:Calculation_706502208711688213:qk:1]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1yybgey0c2prps17aoyvi0y9hwhc].[none:Path (agrupación):ok]</field>
+            <field>[federated.1yybgey0c2prps17aoyvi0y9hwhc].[none:artistName:nk]</field>
+            <field>[federated.1yybgey0c2prps17aoyvi0y9hwhc].[none:msPlayed:qk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{7929D216-0875-4818-BCB8-B777A4129130}' />
+    </window>
+    <window class='worksheet' name='msplayed'>
+      <cards>
+        <edge name='left'>
           <strip size='160'>
             <card type='pages' />
             <card type='filters' />
@@ -2097,31 +2444,281 @@
           </strip>
         </edge>
       </cards>
-      <viewpoint>
-        <highlight>
-          <color-one-way>
-            <field>[federated.1a236x91p1dhmt1b83ytr10q513g].[none:Path_2 (agrupación):ok]</field>
-            <field>[federated.1a236x91p1dhmt1b83ytr10q513g].[none:artistName:nk]</field>
-          </color-one-way>
-        </highlight>
-      </viewpoint>
-      <simple-id uuid='{E91ED846-F666-4042-9CB5-0EEEF0C61964}' />
+      <simple-id uuid='{C1A17ED4-538B-4672-A0E2-4C21DDEBF8E0}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='artists_dendogram'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='msplayed'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='songs_dendogram'>
+          <zoom type='entire-view' />
+          <selection-collection>
+            <node-selection select-tuples='false'>
+              <oriented-node-reference orientation='vertical'>
+                <node-reference>
+                  <axis>[federated.1a236x91p1dhmt1b83ytr10q513g].[usr:Calculation_155092728540323851:qk:9]</axis>
+                </node-reference>
+                <page-reference />
+              </oriented-node-reference>
+            </node-selection>
+          </selection-collection>
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{9D29536D-FB4F-4380-A568-112B3ED952F3}' />
     </window>
   </windows>
   <thumbnails>
+    <thumbnail height='192' name='Dashboard 1' width='192'>
+      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
+      QI5jlwAAAABJRU5ErkJggg==
+    </thumbnail>
     <thumbnail height='192' name='artists_dendogram' width='192'>
       iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABYlAAAWJQFJUiTw
-      AAACFUlEQVR4nO3TMQEAIAzAMMC/5yFjRxMFfXpnZg5Eve0A2GQA0gxAmgFIMwBpBiDNAKQZ
-      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
-      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQD
-      kGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBp
-      BiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA
-      0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDN
-      AKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxA
-      mgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZ
-      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
-      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKR9Y+0F
-      fBUOM1sAAAAASUVORK5CYII=
+      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
+      xpT/D35QvAUNCXobAAAAAElFTkSuQmCC
     </thumbnail>
     <thumbnail height='192' name='circular_radial' width='192'>
       iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABYlAAAWJQFJUiTw
@@ -2555,187 +3152,219 @@
       WSRHdgq0RNFQ4qIvaKPc7mf5WzcxFrZRYpQorW0Cl/V0N++swf8DABfyP4fRQS0AAAAASUVO
       RK5CYII=
     </thumbnail>
+    <thumbnail height='29' name='msplayed' width='144'>
+      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
+      TiCZkPgvZSIKtLULvtEAAAAASUVORK5CYII=
+    </thumbnail>
     <thumbnail height='192' name='songs_dendogram' width='192'>
       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
-      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
-      gg==
+      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
+      /wNWrXscCvvfJgAAAABJRU5ErkJggg==
     </thumbnail>
   </thumbnails>
 </workbook>
